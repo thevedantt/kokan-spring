@@ -10,7 +10,9 @@ export function Nav() {
       <div className="nlinks">
         <a href="#origin">Origin</a>
         <a href="#craft">Craft</a>
+        <a href="#moments">Moments</a>
         <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
         <LanguageToggle />
         <ThemeToggle />
         <a href="#shop" className="nbtn">

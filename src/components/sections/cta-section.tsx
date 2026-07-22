@@ -16,7 +16,7 @@ export function CtaSection() {
   const copy = ctaCopy[locale];
 
   return (
-    <section className="wrap cta-sec">
+    <section className="wrap cta-sec" id="contact">
       <div className="cta-grid">
         <div className="cta-image cta-image--truck" data-rv="true">
           {/* eslint-disable-next-line @next/next/no-img-element */}
