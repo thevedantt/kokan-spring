@@ -36,7 +36,12 @@ const OG_IMAGE = {
   alt: "KOKAN SPRING — Natural Spring Water from the Sahyadri",
 };
 
+const siteUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "KOKAN SPRING | Natural Spring Water from the Sahyadri",
   description:
     "Pure natural spring water sourced from the Sahyadri ranges. Clean, refreshing hydration for homes, businesses, restaurants and every journey.",
