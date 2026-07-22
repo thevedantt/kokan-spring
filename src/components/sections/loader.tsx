@@ -2,8 +2,7 @@ export function Loader() {
   return (
     <div className="loader" id="loader">
       <div className="lw">
-        <div className="mk serif">ASAGIRI</div>
-        <span className="jp">朝霧</span>
+        <div className="mk serif">KOKAN SPRING</div>
         <div className="lbar">
           <i id="lbar" />
         </div>
