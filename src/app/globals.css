@@ -1367,12 +1367,12 @@ footer {
   color: var(--bone-2);
   padding: clamp(4rem, 9vh, 7rem) var(--pad) 2.5rem;
 }
-.frow {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-  align-items: flex-start;
+.ffoot-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1fr 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+  text-align: left;
 }
 .fbrand .mk {
   font-family: var(--serif);
@@ -1383,17 +1383,27 @@ footer {
   color: var(--jade-l);
   font-weight: 400;
 }
-.fbrand .jp {
+.fbrand-mr {
   font-family: var(--jp);
-  font-size: 0.74rem;
-  letter-spacing: 0.4em;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
   color: var(--stone);
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
 }
-.fcols {
-  display: flex;
-  gap: 4rem;
-  flex-wrap: wrap;
+.fbrand-en {
+  font-size: 0.64rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--stone-d);
+  margin-top: 0.4rem;
+}
+.fbrand-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--bone-2);
+  opacity: 0.8;
+  max-width: 30ch;
+  margin-top: 1.4rem;
 }
 .fcol h4 {
   font-size: 0.62rem;
@@ -1412,17 +1422,98 @@ footer {
 .fcol a:hover {
   color: var(--bone);
 }
+.fsocial-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.2rem;
+}
+.fsocial-row .fsocial-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-bottom: 0;
+  border-radius: 100px;
+  border: 1px solid rgba(247, 251, 252, 0.25);
+  color: var(--bone-2);
+  background: transparent;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    transform 0.3s;
+}
+.fsocial-row .fsocial-btn svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+.fsocial-row .fsocial-btn:hover {
+  background: var(--jade-l);
+  border-color: var(--jade-l);
+  color: #091324;
+  transform: translateY(-3px);
+}
+.fdivider {
+  height: 1px;
+  margin-top: 3rem;
+  background: rgba(244, 240, 230, 0.12);
+}
+.ftagline {
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  line-height: 1.3;
+  color: var(--bone);
+  opacity: 0.92;
+  margin-top: 2.6rem;
+}
 .fbot {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  margin-top: 3.5rem;
-  padding-top: 1.6rem;
-  border-top: 1px solid rgba(244, 240, 230, 0.12);
+  margin-top: 2.6rem;
   font-size: 0.66rem;
   letter-spacing: 0.04em;
   color: var(--stone-d);
+}
+.fbot-left,
+.fbot-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.fbot-right {
+  text-align: right;
+  align-items: flex-end;
+}
+.fbot-links {
+  opacity: 0.85;
+}
+@media (max-width: 1024px) {
+  .ffoot-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .fbrand {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 640px) {
+  .ffoot-grid {
+    grid-template-columns: 1fr;
+  }
+  .fbrand {
+    grid-column: auto;
+  }
+  .fbot {
+    flex-direction: column;
+  }
+  .fbot-right {
+    text-align: left;
+    align-items: flex-start;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
