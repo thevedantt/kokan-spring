@@ -1,4 +1,14 @@
+"use client";
+
+import * as React from "react";
+
+import { heroCopy } from "@/translations/hero";
+import { useLanguage } from "@/lib/language-context";
+
 export function HeroSection() {
+  const { locale } = useLanguage();
+  const copy = heroCopy[locale];
+
   return (
     <header className="hero" id="top">
       <div className="bg">
@@ -6,17 +16,24 @@ export function HeroSection() {
         <img src="/herobg.jpeg" alt="" />
       </div>
       <canvas id="steam" />
-      <div className="vjp">朝霧 · 一服</div>
+      <div className="vjp">
+        {copy.signatureLine1}
+        <span className="sig-sub">{copy.signatureLine2}</span>
+      </div>
       <div className="inner">
         <h1 className="serif">
-          <span className="hl">Stone-ground</span>
+          <span className="hl">{copy.headingLine1}</span>
           <span className="hl">
-            <em>stillness.</em>
+            <em>{copy.headingEm}</em>
           </span>
         </h1>
         <p className="sub">
-          First-flush, shade-grown, stone-ground ceremonial matcha. We don&apos;t sell caffeine.
-          We sell ninety seconds of quiet.
+          {copy.description.map((line, i) => (
+            <React.Fragment key={line}>
+              {i > 0 && <br />}
+              {line}
+            </React.Fragment>
+          ))}
         </p>
         <div className="cta">
           <a href="#shop" className="btn solid">
@@ -28,7 +45,7 @@ export function HeroSection() {
         </div>
       </div>
       <div className="scrolln">
-        <span className="ln" /> Scroll to steep
+        <span className="ln" /> {copy.scroll}
       </div>
     </header>
   );

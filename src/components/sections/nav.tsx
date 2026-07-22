@@ -5,7 +5,7 @@ export function Nav() {
   return (
     <nav id="nav">
       <div className="brand serif">
-        ASA<b>GIRI</b>
+        KOKAN <b>SPRING</b>
       </div>
       <div className="nlinks">
         <a href="#origin">Origin</a>

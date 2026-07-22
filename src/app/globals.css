@@ -411,21 +411,23 @@ nav.docked .nav-lang-toggle:hover {
 .hero .vjp {
   position: absolute;
   right: var(--pad);
-  top: 12vh;
+  top: clamp(2rem, 6vh, 3.5rem);
   z-index: 2;
-  writing-mode: vertical-rl;
-  font-family: var(--jp);
-  font-size: clamp(2.8rem, 6.5vw, 6.5rem);
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: rgba(244, 240, 230, 0.86);
-  text-shadow: 0 2px 28px rgba(35, 39, 31, 0.55);
+  text-align: right;
+  font-family: var(--serif);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 2px 12px rgba(35, 39, 31, 0.4);
 }
-@media (max-width: 600px) {
-  .hero .vjp {
-    font-size: 2.6rem;
-    top: 11vh;
-  }
+.hero .vjp .sig-sub {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.56rem;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.55);
 }
 .hero h1 .hl {
   display: block;
@@ -1048,9 +1050,11 @@ section {
 .cta-sec {
   background: transparent;
   text-align: center;
-  min-height: 90vh;
+  min-height: 56vh;
   display: flex;
   align-items: center;
+  padding-top: clamp(2rem, 5vh, 3.5rem);
+  padding-bottom: clamp(2rem, 5vh, 3.5rem);
   padding-left: clamp(12px, 2.5vw, 48px);
 }
 .cta-text-col {
@@ -1087,6 +1091,136 @@ section {
   background: #fff;
   color: #000;
   transform: translateY(-2px);
+}
+.cta-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  margin-top: 1rem;
+}
+.cta-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.cta-phone:hover {
+  color: var(--jade);
+}
+.cta-quick-connect {
+  margin-top: 0.9rem;
+}
+.cta-quick-connect-label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 0.6rem;
+}
+.cta-social-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.cta-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 100px;
+  border: 1px solid rgba(9, 19, 36, 0.22);
+  color: var(--jade);
+  background: transparent;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s,
+    transform 0.3s;
+}
+.cta-social-btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+.cta-social-btn:hover {
+  background: var(--jade);
+  border-color: var(--jade);
+  color: var(--bone);
+  transform: translateY(-3px);
+}
+.cta-location-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem auto 0;
+  padding: 0.9rem 1rem;
+  max-width: 360px;
+  border-radius: 14px;
+  border: 1px solid rgba(9, 19, 36, 0.14);
+  background: #fff;
+  box-shadow: 0 18px 38px rgba(9, 19, 36, 0.1);
+}
+.cta-location-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--jade);
+  width: 100%;
+}
+.cta-location-head > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.cta-location-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.cta-location-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.cta-map-frame {
+  width: 100%;
+  max-width: 320px;
+  height: 172px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(9, 19, 36, 0.14);
+  box-shadow: 0 8px 20px rgba(9, 19, 36, 0.08);
+}
+.cta-map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.cta-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--jade-d);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.cta-map-link:hover {
+  color: var(--jade);
 }
 .cta-grid {
   display: grid;
@@ -1171,9 +1305,9 @@ section {
 }
 .cta-sec h2 {
   font-family: var(--serif);
-  font-size: clamp(2.1rem, 5.3vw, 4.4rem);
-  line-height: 1.05;
-  margin: 1.2rem 0 32px;
+  font-size: clamp(1.9rem, 4.6vw, 3.5rem);
+  line-height: 1.08;
+  margin: 0.8rem 0 20px;
 }
 .cta-sec h2 em {
   font-style: italic;
@@ -1181,8 +1315,9 @@ section {
 }
 .cta-sec p {
   max-width: 520px;
-  margin: 0 auto 28px;
-  line-height: 1.75;
+  margin: 0 auto 20px;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: var(--ink-2);
 }
 .signup {
